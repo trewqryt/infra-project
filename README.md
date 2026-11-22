@@ -14,3 +14,4 @@ docker run -d --name infra-web -p 8080:80 infra-web:1.0
 curl http://localhost:8080
 ```
 Дополнительная заметка.
+Дополнительная заметка.
