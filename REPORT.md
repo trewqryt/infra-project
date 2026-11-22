@@ -34,17 +34,17 @@ git show --stat 881e503
 ```
 
 ```
-<<< ВСТАВЬТЕ ВЫВОД cat .gitignore и git show --stat 881e503 >>>
-```
 
 **Пояснение:** создан пустой репозиторий `infra-project` на GitHub, склонирован по SSH. Первый коммит `881e503`
 содержит только файл `.gitignore` со строками `.env`, `*.log`, `*.retry`.
 
-**📸 СКРИНШОТ:** `git show --stat 881e503` (в коммите только `.gitignore`)
+**📸 СКРИНШОТ:*<img width="720" height="330" alt="2" src="https://github.com/user-attachments/assets/c91a6cd0-eacb-4f45-a00c-fe48e51aeb79" />
+* `git show --stat 881e503` (в коммите только `.gitignore`)
 
 ![git show первого коммита](screenshots/1-1-first-commit.png)
 
-**📸 СКРИНШОТ:** страница репозитория `infra-project` на GitHub
+**📸 СКРИНШОТ:*<img width="922" height="870" alt="5" src="https://github.com/user-attachments/assets/e9f6793a-2ff4-4c0d-a091-eeedad251fa2" />
+* страница репозитория `infra-project` на GitHub
 
 ![репозиторий на GitHub](screenshots/1-1-github-repo.png)
 
