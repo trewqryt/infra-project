@@ -33,11 +33,13 @@ git show --stat 881e503
 
 Пустой репозиторий на GitHub (страница быстрой настройки, файлов в нём ещё нет):
 
-![пустой репозиторий](screenshots/5.png)
+<img width="922" height="870" alt="5" src="https://github.com/user-attachments/assets/447f26ad-db08-4a31-b7a9-5964639133a0" />
+
 
 Содержимое `.gitignore` и первый коммит `881e503` (изменён только один файл `.gitignore`, 3 строки):
 
-![первый коммит](screenshots/2.png)
+<img width="720" height="330" alt="2" src="https://github.com/user-attachments/assets/23cff3ee-a61a-4979-92ee-c140eac443ae" />
+
 
 **Пояснение:** Git теперь знает моё имя и почту, чтобы подписывать коммиты. Файл `.gitignore` это список того,
 что Git должен игнорировать: `.env` (секреты), `*.log` (логи) и `*.retry` (служебные файлы Ansible). Первый
@@ -67,11 +69,11 @@ git push -u origin main
 
 Копирование файлов и `git status`. В списке нет `.env` и `app.log`:
 
-![git status](screenshots/3.png)
+<img width="947" height="617" alt="3" src="https://github.com/user-attachments/assets/1c21f087-7db5-4f7e-a2d1-eb0401378a4f" />
 
 Отправка на сервер и история (4 коммита, самый нижний `881e503 chore: add .gitignore`):
 
-![git push и git log](screenshots/4.png)
+<img width="952" height="486" alt="4" src="https://github.com/user-attachments/assets/91ca4b01-66ef-47a7-a326-9d05c83fa8bd" />
 
 **Пояснение:** `.env` и `app.log` лежат в папке, но Git их не показывает, потому что они перечислены в
 `.gitignore`. Поэтому они не попали на сервер. Файлы проекта закоммичены тремя отдельными коммитами: README и
@@ -93,17 +95,6 @@ git diff --staged
 git commit -m "docs: describe project in README"
 git push
 ```
-
-> ⚠️ **Вставьте сюда скриншот** вывода `git diff` (до `git add`), пустого `git diff` и `git diff --staged`
-> (после `git add`), если он у вас есть. Коммит `2537ce5 docs: describe project in README` виден в истории
-> на скриншотах ниже.
-
-**Пояснение:** второй `git diff` пустой, потому что он показывает разницу между рабочими файлами и **индексом**
-(областью подготовки коммита). После `git add README.md` изменение уже лежит в индексе, и разницы с рабочим
-файлом нет. Изменения, которые ждут коммита, показывает `git diff --staged`: он сравнивает индекс с последним
-коммитом.
-
----
 
 ## Блок 2. История и ветки
 
@@ -165,11 +156,11 @@ git push
 
 Слияние (в выводе есть слово **Fast-forward**):
 
-![fast-forward](screenshots/6.png)
+<img width="777" height="277" alt="6" src="https://github.com/user-attachments/assets/28b75c8c-bbbd-4c30-9453-de02a2632a08" />
 
 Удаление ветки и отправка на сервер:
 
-![удаление ветки](screenshots/7.png)
+<img width="906" height="272" alt="7" src="https://github.com/user-attachments/assets/3e7f2036-c9b0-493c-b67d-be585ba125b1" />
 
 **Пояснение:** пока я работал в ветке, в `main` новых коммитов не появилось. Поэтому Git просто передвинул
 `main` вперёд на мой коммит `08393b1`, без отдельного коммита слияния. Это и называется fast-forward. Ветка
@@ -194,15 +185,15 @@ git merge fix/app-port
 
 Файл `all.yml` **с маркерами** конфликта:
 
-![файл с маркерами](screenshots/8.png)
+<img width="801" height="212" alt="8" src="https://github.com/user-attachments/assets/528d516a-0ca1-4ecc-95e3-b6fbba5f9683" />
 
 Файл после решения конфликта (выбран порт 9090, маркеров нет):
 
-![файл без маркеров](screenshots/9.png)
+<img width="922" height="381" alt="9" src="https://github.com/user-attachments/assets/a67dc76e-2967-43cf-90ac-19cadc57d5d0" />
 
 Завершение слияния и граф истории (виден merge-коммит `ccf8d4e`):
 
-![граф с merge-коммитом](screenshots/10.png)
+<img width="761" height="351" alt="10" src="https://github.com/user-attachments/assets/18c8df19-35cb-42a4-a4e5-efe41934c152" />
 
 **Пояснение:** Git не может сам решить, какой порт правильный (8000 или 9090), поэтому он пометил спорное место
 маркерами `<<<<<<<`, `=======`, `>>>>>>>`. Я оставил значение 9090, удалил маркеры и закоммитил результат. В
@@ -225,12 +216,6 @@ git log --oneline
 В истории появился коммит из веб-интерфейса **`0c7a82d Update README.md`** (виден на скриншоте в задании 5.2:
 стоит между `ccf8d4e` и `c4e9464`).
 
-> ⚠️ **Вставьте сюда скриншот** страницы Commits на GitHub с этим коммитом, если он у вас есть.
-
-**Пояснение:** изменение сделали на сервере, у меня на компьютере его ещё не было. `git pull` скачал новый
-коммит и добавил его в мою ветку `main`.
-
----
 
 ### Задание 3.2. Merge Request (Pull Request)
 
@@ -263,13 +248,6 @@ Fast-forward
 Слитый Pull Request виден в истории как коммит `686419f Merge pull request #1 from
 trewqryt/feature/ansible-curl` (скриншот в задании 5.2).
 
-> ⚠️ **Вставьте сюда скриншот** страницы Pull Request #1 на GitHub со статусом **Merged** и описанием.
-
-**Пояснение:** изменение сделано в отдельной ветке и попало в `main` через Pull Request, а не напрямую. Так
-другие могут посмотреть правку и обсудить её до слияния. Сообщение коммита написано по Conventional Commits:
-тип `feat`, область `ansible`, краткое описание.
-
----
 
 ### Задание 3.3. Уборка веток
 
@@ -319,13 +297,12 @@ git push -u origin feature/docker-page
 
 `Dockerfile` со строкой `EXPOSE 80` после `COPY`:
 
-![Dockerfile](screenshots/11.png)
+<img width="947" height="177" alt="11" src="https://github.com/user-attachments/assets/006de53d-78ef-447f-95a4-c78199f79e80" />
 
 Запуск контейнера и проверка страницы (`curl` показывает мою страницу), затем контейнер удалён:
 
-![docker run и curl](screenshots/12.png)
+<img width="947" height="277" alt="12" src="https://github.com/user-attachments/assets/a417f5eb-c53e-4ce1-a7f6-af0d081631f1" />
 
-> ⚠️ **Вставьте сюда скриншот** последних строк `docker build` (успешная сборка).
 
 Раздел «Запуск в Docker» добавлен в `README.md`:
 
@@ -342,7 +319,7 @@ curl http://localhost:8080
 Слитый Pull Request виден в истории как коммит `82d8e5d Merge pull request #2 from
 trewqryt/feature/docker-page` (скриншоты в задании 5.2).
 
-> ⚠️ **Вставьте сюда скриншот** страницы Pull Request #2 на GitHub со статусом **Merged**.
+> страницы Pull Request #2 на GitHub со статусом **Merged**.
 
 **Пояснение:** `docker build` собрал образ с веб-сервером nginx и моей страницей. `docker run -p 8080:80`
 запустил контейнер и пробросил порт 80 контейнера на порт 8080 компьютера, поэтому `curl` по адресу
@@ -370,7 +347,7 @@ git push
 В истории на сервере остался коммит с правильным сообщением **`d8d7bf2 docs: update readme`**, опечатки
 `updte` нет (скриншот ниже, в задании 5.2).
 
-> ⚠️ **Вставьте сюда скриншот** команд `git restore` и `git commit --amend`, если он у вас есть.
+>  команды `git restore` и `git commit --amend`, если он у вас есть.
 
 **Пояснение:** `git restore` отменяет изменения в файле, которые ещё не закоммичены: файл возвращается к
 состоянию последнего коммита. `git commit --amend -m` заменяет сообщение последнего коммита. Это безопасно,
@@ -393,12 +370,12 @@ git push
 
 История после удаления строки (`0e5fc8b chore: remove *.log from gitignore` уже на сервере, HEAD на нём):
 
-![история до revert](screenshots/13.png)
+<img width="957" height="445" alt="13" src="https://github.com/user-attachments/assets/097420af-f746-4c00-8e87-fd97e56016fd" />
 
 Откат: создан коммит `40a913f Revert "chore: remove *.log from gitignore"`, `.gitignore` снова содержит
 `*.log`:
 
-![git revert](screenshots/14.png)
+<img width="956" height="927" alt="14" src="https://github.com/user-attachments/assets/4e1a5456-f791-4898-b725-3680a12dac92" />
 
 **Пояснение:** для коммита, который уже отправлен на сервер, используют `git revert`, а не удаляют его из
 истории. Другие люди могли уже скачать этот коммит, а удаление из истории потребовало бы force-push, который
