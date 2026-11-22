@@ -28,7 +28,8 @@ git show --stat 881e503
 
 Настройки Git:
 
-![git config](screenshots/1.png)
+<img width="757" height="95" alt="1" src="https://github.com/user-attachments/assets/9d3c2d8e-04ff-437c-9c38-46c9391c2cfd" />
+
 
 Пустой репозиторий на GitHub (страница быстрой настройки, файлов в нём ещё нет):
 
